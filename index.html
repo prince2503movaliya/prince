@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday Prince 🎉</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Belleza&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="p1.png" type="image/png">
+
+
+    <style>
+      :root {
+        --accent: rgba(255, 255, 255, 0.85);
+      }
+      /* Title - typewriter + sparkle */
+     #birthdayTitle {
+  font-family: "Belleza", sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-align: center;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #4b2e83; /* cursor effect */
+  color: #4b2e83; /* base deep purple */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 
+               0 0 12px rgba(255, 255, 255, 0.15); /* subtle glow */
+  
+  /* Typewriter animation */
+  animation: typing 4s steps(28) 1 forwards, blink 0.7s step-end infinite,
+             shineTitle 6s linear infinite;
+  background: linear-gradient(90deg, #ff79c6, #fffd7f, #7efff5, #ff7e7e);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient shine for title */
+@keyframes shineTitle {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typewriter effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+      /* Cursor blink animation */
+      @keyframes blinkCursor {
+        0%,
+        49% {
+          border-color: #4b2e83;
+        }
+        50%,
+        100% {
+          border-color: transparent;
+        }
+      }
+
+      #birthdayTitle.typing {
+        animation: blinkCursor 0.7s step-end infinite;
+      }
+
+      /* Typewriter effect */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      /* Wish - gradient + glow animation */
+      #birthdayWish {
+  font-family: "Alegreya", serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.5;
+  text-align: center;
+  color: #222; /* dark color for readability */
+  text-shadow: 0 2px 6px rgba(255, 255, 255, 0.25); /* subtle glow for contrast */
+  background: none; /* remove gradient fill */
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+      /* Gradient shine animation */
+      @keyframes shine {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+      .app {
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      .bg-grad {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        transition: background 1s ease;
+        background: linear-gradient(
+          135deg,
+          #f7c6ff 0%,
+          #bfe9ff 50%,
+          #fff9c4 100%
+        );
+      }
+      .bg-image-faint {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.06;
+        pointer-events: none;
+        transition: opacity 0.6s ease;
+      }
+      .page {
+        position: relative;
+        z-index: 5;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+      .celebrate-btn {
+        font-family: "Belleza";
+        font-size: clamp(1.6rem, 4.4vw, 3rem);
+        padding: 1.15rem 2.1rem;
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        background: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0.05)
+        );
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.18);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      }
+      .celebrate-btn:active {
+        transform: translateY(2px) scale(0.995);
+      }
+      .celebration {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        max-width: 1100px;
+        width: 100%;
+      }
+      .title {
+        font-family: "Belleza";
+        letter-spacing: 0.6px;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+        font-size: clamp(2rem, 7vw, 4rem);
+        margin: 0;
+      }
+      .wish {
+        font-family: "Alegreya";
+        color: var(--accent);
+        text-align: center;
+        max-width: 900px;
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        line-height: 1.5;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.02)
+        );
+        padding: 0.9rem 1rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .slideshow {
+        width: min(100%, 820px);
+        height: clamp(260px, 45vh, 420px);
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        background: rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+      .slide-controls {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        pointer-events: none;
+        padding: 0.5rem;
+      }
+      .slide-controls button {
+        pointer-events: auto;
+        background: rgba(0, 0, 0, 0.32);
+        border: none;
+        color: white;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      }
+      .controls {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-radius: 12px;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      /* General controls button styling */
+      .controls .btn {
+        padding: 0.55rem 1.1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Start button - gradient + hover */
+      #startCelebration.btn {
+        background: linear-gradient(135deg, #ffb347, #ffcc33) !important;
+        color: #fff !important;
+        border: none !important;
+      }
+      #startCelebration.btn:hover {
+        box-shadow: 0 0 18px #ffcc33, 0 0 28px #ffb347;
+        transform: translateY(-2px) scale(1.05);
+      }
+
+      /* Stop button - gradient + hover */
+      #stopCelebration.btn {
+        background: linear-gradient(135deg, #ff5f6d, #ffc371) !important;
+        color: #fff !important;
+        border: none !important;
+      }
+      #stopCelebration.btn:hover {
+        box-shadow: 0 0 18px #ffc371, 0 0 28px #ff5f6d;
+        transform: translateY(-2px) scale(1.05);
+      }
+
+      /* Slideshow toggle button - gradient + hover */
+      #toggleSlideshow.btn {
+        background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+        color: #fff !important;
+        border: none !important;
+      }
+      #toggleSlideshow.btn:hover {
+        box-shadow: 0 0 18px #2575fc, 0 0 28px #6a11cb;
+        transform: translateY(-2px) scale(1.05);
+      }
+
+      .balloon {
+        position: absolute;
+        bottom: -18%;
+        border-radius: 50%;
+        width: 48px;
+        height: 64px;
+        opacity: 0.96;
+        transform-origin: center bottom;
+        animation: floatUp linear infinite;
+        z-index: 8;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+      }
+      .balloon:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -14px;
+        width: 2px;
+        height: 22px;
+        background: rgba(0, 0, 0, 0.12);
+      }
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) rotate(-6deg);
+          opacity: 0.95;
+        }
+        50% {
+          transform: translateY(-40vh) rotate(6deg);
+          opacity: 0.98;
+        }
+        100% {
+          transform: translateY(-90vh) rotate(-6deg);
+          opacity: 0.75;
+        }
+      }
+      #fireworks {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+      }
+      @media (max-width: 640px) {
+        .celebration {
+          padding: 0.6rem;
+          gap: 0.9rem;
+        }
+        .wish {
+          font-size: 0.95rem;
+          padding: 0.8rem;
+        }
+        .slide-controls button {
+          width: 38px;
+          height: 38px;
+        }
+      }
+      #wishText {
+  font-family: "Alegreya", serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.5;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #3b2e4d; /* Dark plum for visibility against pastel background */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.12); /* subtle shadow for better readability */
+
+  /* Optional: gentle gradient animation */
+  background: linear-gradient(90deg, #3b2e4d, #5c3a70, #3b2e4d);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: wishGlow 6s linear infinite;
+}
+
+/* Glow animation */
+@keyframes wishGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+    </style>
+  </head>
+  <body class="bg-gray-900">
+    <div class="app">
+      <div class="bg-grad" id="bgGrad"></div>
+      <div class="bg-image-faint" id="bgFaint"></div>
+
+      <div class="page" id="pageLanding">
+        <div class="text-center">
+          <h1
+            class="mb-4 text-white"
+            style="font-family: 'Belleza'; font-size: clamp(1.8rem, 5vw, 3rem)"
+          >
+            A Celebration For Prince 🎉
+          </h1>
+          <button id="celebrateBtn" class="celebrate-btn btn">
+            🎊 Celebrate!
+          </button>
+        </div>
+      </div>
+
+      
+
+      <div
+        class="page"
+        id="pageCelebrate"
+        style="
+          display: none;
+          align-items: flex-start;
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        "
+      >
+     
+        <div class="celebration container">
+          <div class="birthday-text-container">
+            <h2 class="title" id="birthdayTitle">Happy Birthday, Prince 🎂</h2>
+            <p class="wish"  id="wishText">
+              Wishing you a day filled with love, laughter and every happiness
+              you deserve. May this year be your brightest yet — full of new
+              adventures, big dreams and moments that become memories. Happy
+              Birthday, Prince!
+            </p>
+          </div>
+
+          <div class="slideshow" id="slideshow">
+            <img
+              id="slideImg"
+              class="slide-img"
+              src="p1.jpg"
+              alt="slide"
+              draggable="false"
+            />
+            <div class="slide-controls">
+              <button id="prevBtn">&#10094;</button>
+              <button id="nextBtn">&#10095;</button>
+            </div>
+          </div>
+          <div
+            class="controls mt-2 d-flex flex-wrap gap-2 justify-content-center"
+          >
+            <button id="startCelebration" class="btn btn-sm">Start</button>
+            <button id="stopCelebration" class="btn btn-sm">Stop</button>
+            <button id="toggleSlideshow" class="btn btn-sm">
+              Pause Slideshow
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="fireworks"></canvas>
+    </div>
+
+    <audio id="birthdayAudio" loop preload="auto">
+      <source src="prince.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const TOTAL_IMAGES = 48,
+        SLIDE_INTERVAL = 2000;
+      const pageLanding = document.getElementById("pageLanding"),
+        pageCelebrate = document.getElementById("pageCelebrate"),
+        celebrateBtn = document.getElementById("celebrateBtn"),
+        slideImg = document.getElementById("slideImg"),
+        prevBtn = document.getElementById("prevBtn"),
+        nextBtn = document.getElementById("nextBtn"),
+        toggleSlideshowBtn = document.getElementById("toggleSlideshow"),
+        startCelebrationBtn = document.getElementById("startCelebration"),
+        stopCelebrationBtn = document.getElementById("stopCelebration"),
+        audio = document.getElementById("birthdayAudio"),
+        bgGrad = document.getElementById("bgGrad"),
+        bgFaint = document.getElementById("bgFaint"),
+        fireworksCanvas = document.getElementById("fireworks");
+
+      let currentIndex = 1,
+        slideIntervalId = null,
+        slideshowRunning = false;
+
+      function showSlide(i) {
+        if (i < 1) i = TOTAL_IMAGES;
+        if (i > TOTAL_IMAGES) i = 1;
+        currentIndex = i;
+        slideImg.src = `p${i}.jpg`;
+        bgFaint.style.backgroundImage = `url('p${i}.jpg')`;
+      }
+
+      function startSlideshow() {
+        slideshowRunning = true;
+        toggleSlideshowBtn.textContent = "Pause Slideshow";
+        slideIntervalId = setInterval(() => {
+          showSlide(currentIndex + 1);
+        }, SLIDE_INTERVAL);
+      }
+      function stopSlideshow() {
+        slideshowRunning = false;
+        toggleSlideshowBtn.textContent = "Resume Slideshow";
+        clearInterval(slideIntervalId);
+        slideIntervalId = null;
+      }
+      toggleSlideshowBtn.addEventListener("click", () => {
+        if (slideshowRunning) stopSlideshow();
+        else startSlideshow();
+      });
+      prevBtn.addEventListener("click", () => {
+        showSlide(currentIndex - 1);
+        if (slideshowRunning) resetSlideTimer();
+      });
+      nextBtn.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+        if (slideshowRunning) resetSlideTimer();
+      });
+      function resetSlideTimer() {
+        if (slideshowRunning) {
+          clearInterval(slideIntervalId);
+          startSlideshow();
+        }
+      }
+      showSlide(1);
+
+      const gradients = [
+        ["#ffecd2", "#fcb69f"],
+        ["#f6d365", "#fda085"],
+        ["#a1c4fd", "#c2e9fb"],
+        ["#d4fc79", "#96e6a1"],
+        ["#fbc2eb", "#a6c1ee"],
+      ];
+      let gradIndex = Math.floor(Math.random() * gradients.length);
+      function applyGradient(i) {
+        const g = gradients[i % gradients.length];
+        bgGrad.style.background = `linear-gradient(135deg, ${g[0]} 0%, ${g[1]} 100%)`;
+      }
+      function startGradientRotation() {
+        applyGradient(gradIndex);
+        setInterval(() => {
+          gradIndex = (gradIndex + 1) % gradients.length;
+          applyGradient(gradIndex);
+        }, 4200);
+      }
+      startGradientRotation();
+
+      celebrateBtn.addEventListener("click", () => {
+        pageLanding.style.display = "none";
+        pageCelebrate.style.display = "flex";
+        showSlide(1);
+        startSlideshow(); // <-- auto start slideshow
+        startCelebration(); // <-- auto start balloons/fireworks/audio
+      });
+      
+
+      /* AUDIO + CELEBRATION */
+      startCelebrationBtn.addEventListener("click", () => startCelebration());
+      stopCelebrationBtn.addEventListener("click", () => stopCelebration());
+      function startCelebration() {
+        audio.play().catch(() => {});
+        startBalloons();
+        startFireworks();
+      }
+      function stopCelebration() {
+        audio.pause();
+        stopBalloons();
+        stopFireworks();
+      }
+
+      /* BALLOONS */
+      let balloonInterval;
+      function randomColor() {
+        return `hsl(${Math.random() * 360},70%,70%)`;
+      }
+      function createBalloon() {
+        const b = document.createElement("div");
+        b.className = "balloon";
+        b.style.background = randomColor();
+        b.style.left = Math.random() * 100 + "%";
+        b.style.animationDuration = 5 + Math.random() * 5 + "s";
+        document.body.appendChild(b);
+        setTimeout(() => b.remove(), 10000);
+      }
+      function startBalloons() {
+        balloonInterval = setInterval(createBalloon, 600);
+      }
+      function stopBalloons() {
+        clearInterval(balloonInterval);
+      }
+
+      /* FIREWORKS */
+      let fwCtx = fireworksCanvas.getContext("2d"),
+        fireworks = [],
+        animationId;
+      fireworksCanvas.width = window.innerWidth;
+      fireworksCanvas.height = window.innerHeight;
+      function Firework() {
+        this.x = Math.random() * fireworksCanvas.width;
+        this.y = fireworksCanvas.height;
+        this.riseY = Math.random() * fireworksCanvas.height * 0.6;
+        this.particles = [];
+        this.color = `hsl(${Math.random() * 360},80%,60%)`;
+        this.explode = false;
+        this.update = function () {
+          if (!this.explode) {
+            this.y -= 4;
+            if (this.y <= this.riseY) {
+              this.explode = true;
+              for (let i = 0; i < 30; i++) {
+                this.particles.push({
+                  x: this.x,
+                  y: this.y,
+                  dx: (Math.random() - 0.5) * 5,
+                  dy: (Math.random() - 0.5) * 5,
+                  l: Math.random() * 30,
+                  opacity: 1,
+                });
+              }
+            }
+          } else {
+            this.particles.forEach((p) => {
+              p.x += p.dx;
+              p.y += p.dy;
+              p.opacity -= 0.03;
+            });
+            this.particles = this.particles.filter((p) => p.opacity > 0);
+          }
+        };
+        this.draw = function () {
+          if (!this.explode) {
+            fwCtx.beginPath();
+            fwCtx.arc(this.x, this.y, 3, 0, 2 * Math.PI);
+            fwCtx.fillStyle = this.color;
+            fwCtx.fill();
+          } else {
+            this.particles.forEach((p) => {
+              fwCtx.beginPath();
+              fwCtx.arc(p.x, p.y, 2, 0, 2 * Math.PI);
+              fwCtx.fillStyle = `hsla(${Math.random() * 360},80%,60%,${
+                p.opacity
+              })`;
+              fwCtx.fill();
+            });
+          }
+        };
+      }
+      function animateFireworks() {
+        fwCtx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
+        if (Math.random() < 0.03) fireworks.push(new Firework());
+        fireworks.forEach((f) => {
+          f.update();
+          f.draw();
+        });
+        fireworks = fireworks.filter(
+          (f) => !f.explode || f.particles.length > 0
+        );
+        animationId = requestAnimationFrame(animateFireworks);
+      }
+      function startFireworks() {
+        animateFireworks();
+      }
+      function stopFireworks() {
+        cancelAnimationFrame(animationId);
+        fwCtx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
+      }
+      window.addEventListener("resize", () => {
+        fireworksCanvas.width = window.innerWidth;
+        fireworksCanvas.height = window.innerHeight;
+      });
+
+      function typeWriterEffect(elementId, text, speed = 120) {
+        const el = document.getElementById(elementId);
+        el.textContent = ""; // clear text
+        el.classList.add("typing");
+        let i = 0;
+
+        function type() {
+          if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else {
+            el.classList.remove("typing"); // stop cursor blink
+          }
+        }
+
+        type();
+      }
+
+      // Usage: call after celebration page is shown
+      // For example, inside your celebrateBtn click handler:
+      
+    </script>
+  </body>
+</html>
